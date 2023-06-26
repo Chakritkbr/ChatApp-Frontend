@@ -20,7 +20,7 @@ const Chat = () => {
     connectToWs();
   }, []);
   function connectToWs() {
-    const ws = new WebSocket('ws://localhost:3001');
+    const ws = new WebSocket(`ws://${import.meta.env.VITE_REACT_APP_API}`);
     setWs(ws);
     ws.addEventListener('message', handleMessage);
     ws.addEventListener('close', () =>
