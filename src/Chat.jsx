@@ -18,7 +18,7 @@ const Chat = () => {
 
   useEffect(() => {
     connectToWs();
-  }, []);
+  }, [selectedUserId]);
   function connectToWs() {
     const ws = new WebSocket(`wss://${import.meta.env.VITE_REACT_APP_WS_API}`);
     setWs(ws);
